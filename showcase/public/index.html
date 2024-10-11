@@ -1,0 +1,23 @@
+<!-- showcase/public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showcase Demo</title>
+</head>
+<body>
+    <h1>Health Emergency App Showcase</h1>
+    <p>This is a simple demo to show progress.</p>
+    <button id="fetchData">Fetch Data</button>
+    <pre id="data"></pre>
+
+    <script>
+        document.getElementById('fetchData').onclick = async () => {
+            const response = await fetch('/data');
+            const data = await response.json();
+            document.getElementById('data').textContent = JSON.stringify(data, null, 2);
+        };
+    </script>
+</body>
+</html>
